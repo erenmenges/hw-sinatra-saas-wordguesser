@@ -36,16 +36,12 @@ class WordGuesserGame
       word.length.times do |i|
         @word_with_guesses[i] = char if @word[i] == char
       end
-    elsif @word.include?(char) and @guesses.include?(char)
-      @number_of_wrong_guesses += 1
+    elsif @guesses.include?(char) or @wrong_guesses.include?(char)
       false
-    elsif !@word.include?(char) and !@wrong_guesses.include?(char)
+    elsif !@word.include?(char)
       @number_of_wrong_guesses += 1
       @wrong_guesses << char
       true
-    else
-      @number_of_wrong_guesses += 1
-      false
     end
   end
 
