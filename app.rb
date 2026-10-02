@@ -79,7 +79,7 @@ class WordGuesserApp < Sinatra::Base
 
   get '/lose' do
     ### YOUR CODE HERE ###
-    if @game.check_win_or_lose == :win
+    if @game.check_win_or_lose == :lose
       erb :lose # You may change/remove this line
     else
       redirect '/show'
